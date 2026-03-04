@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Tortorella Statistics for Social Justice Initiative – Fordham University</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --maroon: #72253D;
+    --maroon-dark: #5A0414;
+    --navy: #72253D;
+    --navy-dark: #5A0414;
+    --accent: #ffffff;
+    --accent-bright: #f0e0e4;
+    --gold: #ffffff;
+    --gold-light: #f0e0e4;
+    --text: #1c1c1c;
+    --text-muted: #444;
+    --bg: #fafafa;
+    --bg-warm: #f7f1f3;
+    --rule: #c0788a;
+    --link: #72253D;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: linear-gradient(135deg, #5A0414 0%, #72253D 100%);
+    color: white;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 60px,
+      rgba(255,255,255,0.04) 60px,
+      rgba(255,255,255,0.04) 61px
+    );
+  }
+  .header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 52px 40px 44px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+  .header-logo-area {
+    flex-shrink: 0;
+  }
+  .header-logo-area svg { display: block; }
+  .header-text { flex: 1; }
+  .header-text h1 {
+    font-family: 'EB Garamond', serif;
+    font-size: 2.4rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+    color: white;
+  }
+  .header-text h1 span { color: white; }
+  .header-text .tagline {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: rgba(255,255,255,0.85);
+    letter-spacing: 0.06em;
+    font-weight: 300;
+  }
+  .header-text .fordham-badge {
+    display: inline-block;
+    margin-top: 16px;
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 2px;
+    padding: 4px 12px;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    color: white;
+    text-transform: uppercase;
+  }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--navy-dark);
+    border-top: 1px solid rgba(255,255,255,0.2);
+  }
+  nav ul {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+    list-style: none;
+    display: flex;
+    gap: 0;
+  }
+  nav ul li a {
+    display: block;
+    padding: 13px 20px;
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+    border-bottom: 2px solid transparent;
+  }
+  nav ul li a:hover { color: white; border-bottom-color: white; }
+
+  /* ── LAYOUT ── */
+  .page-wrap { max-width: 1100px; margin: 0 auto; padding: 60px 40px; }
+
+  section { margin-bottom: 64px; }
+  section:last-child { margin-bottom: 0; }
+
+  .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  h2 {
+    font-family: 'EB Garamond', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--maroon);
+    line-height: 1.25;
+    margin-bottom: 6px;
+  }
+  .section-rule {
+    width: 52px;
+    height: 2px;
+    background: var(--maroon);
+    margin-bottom: 24px;
+  }
+  p { margin-bottom: 16px; color: var(--text-muted); font-size: 1.02rem; }
+  p:last-child { margin-bottom: 0; }
+
+  /* ── HERO STRIP ── */
+  .hero-strip {
+    background: linear-gradient(135deg, #72253D 0%, #5A0414 100%);
+    color: white;
+    padding: 52px 40px;
+    margin-bottom: 64px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-strip::after {
+    content: '"';
+    position: absolute;
+    right: 60px;
+    top: -10px;
+    font-family: 'EB Garamond', serif;
+    font-size: 18rem;
+    color: rgba(255,255,255,0.07);
+    line-height: 1;
+    pointer-events: none;
+  }
+  .hero-strip-inner { max-width: 1020px; margin: 0 auto; }
+  .hero-strip blockquote {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.55rem;
+    font-style: italic;
+    line-height: 1.5;
+    color: #ffffff;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    margin-bottom: 16px;
+    max-width: 760px;
+  }
+  .hero-strip cite {
+    font-size: 0.85rem;
+    color: #ffffff;
+    letter-spacing: 0.08em;
+    font-style: normal;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+  }
+
+  /* ── TWO COLUMN ── */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  @media (max-width: 720px) { .two-col { grid-template-columns: 1fr; } }
+
+  /* ── CARD GRID ── */
+  .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  @media (max-width: 860px) { .card-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 540px) { .card-grid { grid-template-columns: 1fr; } }
+
+  .card {
+    background: white;
+    border: 1px solid #e8e0d0;
+    border-top: 3px solid var(--maroon);
+    padding: 24px 22px;
+    border-radius: 2px;
+  }
+  .card h3 {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.15rem;
+    color: var(--maroon);
+    margin-bottom: 8px;
+  }
+  .card p { font-size: 0.93rem; color: var(--text-muted); margin: 0; }
+  .card .icon {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  /* ── FOCUS AREAS ── */
+  .focus-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 16px;
+  }
+  .focus-tag {
+    background: var(--maroon);
+    color: white;
+    padding: 7px 16px;
+    border-radius: 2px;
+    font-size: 0.84rem;
+    letter-spacing: 0.04em;
+    border-left: 3px solid var(--gold);
+  }
+
+  /* ── FACULTY ── */
+  .faculty-card {
+    display: flex;
+    gap: 28px;
+    background: white;
+    border: 1px solid #e8e0d0;
+    padding: 28px 28px;
+    border-radius: 2px;
+    align-items: flex-start;
+  }
+  .faculty-avatar {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--navy), var(--navy-dark));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: white;
+    font-family: 'EB Garamond', serif;
+    font-size: 2rem;
+    border: 2px solid var(--maroon);
+  }
+  .faculty-info h3 {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.35rem;
+    color: var(--maroon);
+    margin-bottom: 2px;
+  }
+  .faculty-info .title {
+    font-size: 0.87rem;
+    color: white;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+  }
+  .faculty-info p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 10px; }
+  .faculty-info a { color: var(--maroon); font-size: 0.9rem; }
+
+  /* ── PROGRAM STRUCTURE ── */
+  .steps { counter-reset: step; display: flex; flex-direction: column; gap: 0; }
+  .step {
+    display: flex;
+    gap: 20px;
+    padding: 24px 0;
+    border-bottom: 1px solid #e8e0d0;
+  }
+  .step:last-child { border-bottom: none; }
+  .step-num {
+    counter-increment: step;
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    background: var(--maroon);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'EB Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    border-radius: 50%;
+  }
+  .step-body h3 {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.15rem;
+    color: var(--maroon);
+    margin-bottom: 6px;
+  }
+  .step-body p { font-size: 0.95rem; color: var(--text-muted); margin: 0; }
+
+  /* ── FELLOWSHIP CALL ── */
+  .fellowship-banner {
+    background: linear-gradient(135deg, #72253D 0%, #5A0414 100%);
+    border-left: 5px solid var(--gold);
+    padding: 40px 40px;
+    color: white;
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+  }
+  .fellowship-banner::before {
+    content: '2026';
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'EB Garamond', serif;
+    font-size: 7rem;
+    color: rgba(255,255,255,0.1);
+    font-weight: 600;
+    pointer-events: none;
+    line-height: 1;
+  }
+  .fellowship-banner .eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 10px;
+  }
+  .fellowship-banner h2 {
+    color: white;
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+  }
+  .fellowship-banner p { color: rgba(255,255,255,0.80); margin-bottom: 12px; font-size: 1rem; }
+  .fellowship-banner ul {
+    padding-left: 20px;
+    color: rgba(255,255,255,0.80);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    line-height: 1.9;
+  }
+  .fellowship-banner .detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 20px 0 24px;
+  }
+  .fellowship-banner .detail-item {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.25);
+    padding: 14px 16px;
+    border-radius: 2px;
+  }
+  .fellowship-banner .detail-item .label {
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 4px;
+  }
+  .fellowship-banner .detail-item .value {
+    color: white;
+    font-size: 0.95rem;
+  }
+  .btn {
+    display: inline-block;
+    background: white;
+    color: #5A0414;
+    padding: 12px 28px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .btn:hover { background: #f0e0e4; color: #5A0414; }
+  .btn-outline {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.8);
+    color: white;
+    margin-left: 12px;
+  }
+  .btn-outline:hover { background: rgba(255,255,255,0.15); }
+
+  /* ── PARTNERS / CCEL ── */
+  .partner-box {
+    background: #f7f1f3;
+    border: 1px solid #e0d8c8;
+    padding: 28px 28px;
+    border-radius: 2px;
+  }
+  .partner-box h3 {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.15rem;
+    color: var(--maroon);
+    margin-bottom: 8px;
+  }
+  .partner-box p { font-size: 0.94rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy-dark);
+    color: rgba(255,255,255,0.65);
+    padding: 36px 40px;
+    font-size: 0.85rem;
+  }
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  footer a { color: white; text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  .footer-rule {
+    max-width: 1100px;
+    margin: 0 auto 20px;
+    height: 1px;
+    background: rgba(255,255,255,0.15);
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     HEADER
+═══════════════════════════════════════════ -->
+<header>
+  <div class="header-inner">
+    <div class="header-logo-area">
+      <!-- LOGO (inline SVG – replace with final logo file if preferred) -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="140" height="140">
+        <circle cx="60" cy="60" r="58" fill="none" stroke="white" stroke-width="1.5" opacity="0.2"/>
+        <circle cx="46" cy="52" r="30" fill="none" stroke="white" stroke-width="2" opacity="0.7"/>
+        <circle cx="74" cy="52" r="30" fill="none" stroke="white" stroke-width="2" opacity="0.7"/>
+        <text x="60" y="62" text-anchor="middle" font-family="Georgia,serif" font-size="28" fill="white" font-weight="bold">Σ</text>
+        <line x1="38" y1="84" x2="82" y2="84" stroke="white" stroke-width="1.5"/>
+        <line x1="60" y1="76" x2="60" y2="94" stroke="white" stroke-width="1.5"/>
+        <line x1="38" y1="84" x2="30" y2="93" stroke="white" stroke-width="1.2"/>
+        <line x1="38" y1="84" x2="46" y2="93" stroke="white" stroke-width="1.2"/>
+        <path d="M30,93 Q38,97 46,93" fill="none" stroke="white" stroke-width="1.2"/>
+        <line x1="82" y1="84" x2="90" y2="93" stroke="white" stroke-width="1.2"/>
+        <line x1="82" y1="84" x2="74" y2="93" stroke="white" stroke-width="1.2"/>
+        <path d="M74,93 Q82,97 90,93" fill="none" stroke="white" stroke-width="1.2"/>
+      </svg>
+    </div>
+    <div class="header-text">
+      <h1><span>Tortorella</span> Statistics for<br>Social Justice Initiative</h1>
+      <div class="tagline" style="color:rgba(255,255,255,0.88);">Rigorous Data · Community Impact · Equitable Futures</div>
+      <div class="fordham-badge" style="color:white;border-color:rgba(255,255,255,0.5);">Fordham University · Bronx, New York</div>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════════ -->
+<nav>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#mission">Mission</a></li>
+    <li><a href="#research">Research Focus</a></li>
+    <li><a href="#program">Program</a></li>
+    <li><a href="#faculty">Leadership</a></li>
+    <li><a href="#fellowship">Fellowship</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ═══════════════════════════════════════════
+     MAIN CONTENT
+═══════════════════════════════════════════ -->
+<div class="page-wrap">
+
+  <!-- HERO QUOTE -->
+  <div class="hero-strip" id="about">
+    <div class="hero-strip-inner">
+      <blockquote>
+        "Statistics is not merely a tool of analysis — it is an instrument of justice,
+        capable of revealing inequity, holding institutions accountable, and empowering communities."
+      </blockquote>
+      <cite style="color:#ffffff;text-shadow:0 1px 2px rgba(0,0,0,0.25);">— Tortorella Statistics for Social Justice Initiative</cite>
+    </div>
+  </div>
+
+  <!-- ABOUT / OVERVIEW -->
+  <section>
+    <div class="section-label">About the Initiative</div>
+    <h2>Where Rigorous Scholarship Meets Community Need</h2>
+    <div class="section-rule"></div>
+    <div class="two-col">
+      <div>
+        <p>
+          The <strong>Tortorella Statistics for Social Justice Initiative</strong> at Fordham University
+          combines the rigor of academic learning with the impact of community engagement. Through this initiative,
+          undergraduate and graduate students work alongside faculty, research mentors, and local community partners -
+          bringing the power of statistics, probability, data science, and applied mathematics to bear on
+          pressing societal challenges.
+        </p>
+        <p>
+          A distinctive hallmark of the program is its emphasis on <em>critical quantitative methods</em>:
+          equipping students to think not only about how to use data, but about the history and politics
+          of data itself — how statistical practices can perpetuate inequity, and how they can be
+          deliberately deployed to advance justice.
+        </p>
+      </div>
+      <div>
+        <p>
+          Students participate in the program will develop comprehensive skills in
+          data analysis, policy analysis, project management, and community-based research.
+          Each year, Tortorella Fellows present their work at an annual showcase, bringing together
+          community partners, Fordham faculty and staff, and the broader public.
+        </p>
+        <p>
+          Housed within Fordham's <strong><a href="https://www.fordham.edu/about/leadership-and-administration/administrative-offices/external-affairs/center-for-community-engaged-learning/about-us/" target="_blank" style="color:var(--maroon);text-decoration:underline;">Center for Community Engaged Learning (CCEL)</a></strong>, the initiative is positioned to have
+          sustained, real-world impact in the communities Fordham serves, with the goal
+          to create a center for statistics and social justice.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section id="mission">
+    <div class="section-label">Our Mission</div>
+    <h2>Goals of the Initiative</h2>
+    <div class="section-rule"></div>
+    <div class="card-grid">
+      <div class="card">
+        <span class="icon">📊</span>
+        <h3>Practical Statistical Fluency</h3>
+        <p>Equip students with hands-on experience applying statistics, probability, data science, and machine learning to real-world problems, preparing them for careers in data, social services, law, medicine, and policy.</p>
+      </div>
+      <div class="card">
+        <span class="icon">⚖️</span>
+        <h3>Advocacy Through Data</h3>
+        <p>Support students in understanding the power of statistical ideas in areas of social justice, and help them become effective advocates who can translate findings into meaningful action.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🤝</span>
+        <h3>Community Partnership</h3>
+        <p>Strengthen students' ability to collaborate with community organizations, co-develop research agendas that reflect community priorities, and communicate results to diverse audiences.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🔍</span>
+        <h3>Critical Quantitative Methods</h3>
+        <p>Train students to examine the ethical and political dimensions of data, interrogating who collects data, how it is used, and whether it advances or undermines equity.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🏙️</span>
+        <h3>NYC &amp; Beyond</h3>
+        <p>Directly support CCEL's goals of conducting community-driven research to address critical challenges of justice and equity in the Bronx and surrounding communities.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🎓</span>
+        <h3>Research Engagement</h3>
+        <p>Advance Fordham's strategic goal of broadening student participation in applied research, creating a pipeline of data-literate graduates who are committed to the common good.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH FOCUS AREAS -->
+  <section id="research">
+    <div class="section-label">Research</div>
+    <h2>Focus Areas</h2>
+    <div class="section-rule"></div>
+    <p>
+      Tortorella Initiative projects engage with a range of interconnected social challenges.
+      Research topics are developed in partnership with community organizations and guided by
+      community-identified priorities. Current and anticipated focus areas include:
+    </p>
+    <div class="focus-list">
+      <span class="focus-tag">Housing Equity &amp; Affordability</span>
+      <span class="focus-tag">Public Health Disparities</span>
+      <span class="focus-tag">Social Policy Evaluation</span>
+      <span class="focus-tag">Climate Resilience &amp; Environmental Justice</span>
+      <span class="focus-tag">Equitable Resource Allocation</span>
+      <span class="focus-tag">Education Access &amp; Outcomes</span>
+      <span class="focus-tag">Criminal Justice Reform</span>
+      <span class="focus-tag">Community Economic Development</span>
+      <span class="focus-tag">Immigration &amp; Demographic Change</span>
+      <span class="focus-tag">Labor &amp; Workforce Equity</span>
+      <span class="focus-tag">Urban Science &amp; City Systems</span>
+      <span class="focus-tag">Responsible AI &amp; Algorithmic Fairness</span>
+    </div>
+    <p style="margin-top:20px;">
+      Projects typically employ quantitative approaches rooted in
+      <em>community-based participatory action research (CBPAR)</em>, ensuring that research design
+      and outcomes are responsive to the communities involved.
+    </p>
+  </section>
+
+  <!-- PROGRAM STRUCTURE -->
+  <section id="program">
+    <div class="section-label">How It Works</div>
+    <h2>Program Structure</h2>
+    <div class="section-rule"></div>
+    <p>
+      Tortorella Research Fellows are selected through a competitive application process. The program is open to
+      both undergraduate and graduate students with background and interests in statistics, mathematics,
+      data science, social science, pre-law, pre-medicine, and beyond. Placements are available during the summer or academic year.
+    </p>
+    <div class="steps" style="margin-top:28px;">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h3>Competitive Selection</h3>
+          <p>Students apply to become Tortorella Research Fellows. Selections are made based on academic preparation, interest in social justice, and potential for community-driven research projects.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h3>Paired with Faculty &amp; Community Partner</h3>
+          <p>Each fellow (or team) is matched with a research mentor and a community partner organization identified through CCEL. Together, they co-design a research project addressing a real community need.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h3>Experiential Learning</h3>
+          <p>Fellows have opportunities to attend activities organized by CCEL and faculty mentor to learn about applications in social justice contexts; stakeholder communication and policy translation; ethical dimensions of research; and guest lectures from academics, practitioners, and community leaders.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <h3>Portfolio Development</h3>
+          <p>Throughout the program, fellows build a professional portfolio documenting their research process, methods, findings, and reflections, demonstrating both technical competency and real-world impact.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-body">
+          <h3>Annual Showcase</h3>
+          <p>Fellows present their work at the Tortorella Initiative Annual Conference, attended by community partners, Fordham faculty and staff, students, and invited guests. The event celebrates student achievement and strengthens community ties.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FACULTY DIRECTOR -->
+  <section id="faculty">
+    <div class="section-label">Leadership</div>
+    <h2>Faculty Director</h2>
+    <div class="section-rule"></div>
+    <div class="faculty-card">
+      <img src="data:image/jpeg;base64,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" alt="Dr. Juntao Chen" style="width:100px;height:100px;border-radius:50%;object-fit:cover;object-position:center top;border:2px solid var(--gold);flex-shrink:0;"/>
+      <div class="faculty-info">
+        <h3>Dr. Juntao Chen</h3>
+        <div class="title">Faculty Director, Tortorella Statistics for Social Justice Initiative</div>
+        <p>
+          <strong>Department of Computer and Information Sciences</strong><br>
+          Fordham University, New York
+        </p>
+        <p>
+          Dr. Chen provides scholarly leadership for the initiative, overseeing research design, mentoring,
+          and the academic direction of Tortorella Fellows. His research intersects computational methods, data science,
+          and community-engaged scholarship, with a focus on applying rigorous quantitative approaches to problems
+          of social significance.
+        </p>
+        <p>
+          📧 <a href="mailto:jchen504@fordham.edu" style="color:#5A0414;font-weight:600;"><strong>jchen504@fordham.edu</strong></a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FELLOWSHIP CALL TO ACTION -->
+  <section id="fellowship">
+    <div class="fellowship-banner">
+      <div class="eyebrow">Now Accepting Applications</div>
+      <h2>Call for 2026 Tortorella Summer Research Fellowship</h2>
+      <p>
+        The Tortorella Statistics for Social Justice Initiative is recruiting its <strong>inaugural cohort of Research Fellows</strong> for Summer 2026.
+        This fellowship is open to Fordham University undergraduate and graduate students interested in applying quantitative methods,
+        such as data science, statistics, optimization, and machine learning, to real-world problems that advance social good.
+      </p>
+      <p>
+        Fellows will work on faculty-designed research projects and supported by a team of research mentors. Beyond producing publishable
+        research, the program aims to generate actionable insights that can inform policy and improve outcomes for communities.
+      </p>
+
+      <!-- Deadline callout -->
+      <div style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.4);border-left:4px solid white;padding:14px 18px;margin:20px 0;border-radius:2px;">
+        <span style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.7);">Application Deadline</span><br>
+        <span style="font-size:1.15rem;font-weight:700;color:white;">April 15, 2026 &nbsp;·&nbsp; 11:59 PM</span><br>
+        <span style="font-size:0.88rem;color:rgba(255,255,255,0.8);">Applications reviewed on a rolling basis — <em>early submission strongly encouraged.</em></span>
+      </div>
+
+      <div class="detail-grid">
+        <div class="detail-item">
+          <div class="label">Performance Period</div>
+          <div class="value">June 1 – August 15, 2026</div>
+        </div>
+        <div class="detail-item">
+          <div class="label">Stipend</div>
+          <div class="value">$5,000 for full fellowship period</div>
+        </div>
+        <div class="detail-item">
+          <div class="label">Cohort Size</div>
+          <div class="value">~10 Fellows</div>
+        </div>
+        <div class="detail-item">
+          <div class="label">Format</div>
+          <div class="value">Primarily virtual; Flexibility provided</div>
+        </div>
+        <div class="detail-item">
+          <div class="label">Eligibility</div>
+          <div class="value">Current Fordham undergraduate &amp; graduate students</div>
+        </div>
+        <div class="detail-item">
+          <div class="label">Research Topics</div>
+          <div class="value">Housing equity, public health, social policy, climate resilience, etc</div>
+        </div>
+      </div>
+
+      <p><strong style="color:white;">Who Should Apply?</strong></p>
+      <ul>
+        <li>Students interested in applying quantitative methods, such as data science, statistics, optimization, to social challenges</li>
+        <li>Students from any academic background: data science, mathematics, economics, social science, urban studies, pre-law, pre-medical, and beyond</li>
+        <li>Students who want to produce publishable research with real policy and community impact</li>
+        <li>Students seeking mentorship from faculty and a structured, collaborative research environment</li>
+      </ul>
+
+      <a class="btn"
+        href="https://forms.gle/mYJjF4awXCbPrUiD9"
+        target="_blank">Apply Now →</a>
+      <a class="btn btn-outline" href="mailto:jchen504@fordham.edu">Questions? Contact Us</a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-label">Get in Touch</div>
+    <h2>Contact</h2>
+    <div class="section-rule"></div>
+    <p>
+      For questions about the initiative, research collaborations, or
+      fellowship applications, please contact:
+    </p>
+    <p>
+      <strong>Dr. Juntao Chen</strong>, Faculty Director<br>
+      Department of Computer and Information Sciences, Fordham University<br>
+      📧 <a href="mailto:jchen504@fordham.edu" style="color:var(--maroon);font-weight:600;">jchen504@fordham.edu</a>
+    </p>
+    <p style="margin-top:12px;">
+      For community partnership inquiries, please also reach out through the
+      <strong><a href="https://www.fordham.edu/about/leadership-and-administration/administrative-offices/external-affairs/center-for-community-engaged-learning/about-us/" target="_blank" style="color:var(--maroon);text-decoration:underline;">Center for Community Engaged Learning (CCEL)</a></strong> at Fordham University.
+    </p>
+  </section>
+
