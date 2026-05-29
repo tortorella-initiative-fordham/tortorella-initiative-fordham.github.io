@@ -1,0 +1,658 @@
+/* =====================================================
+   Tortorella Statistics for Social Justice Initiative
+   Shared stylesheet (used by all pages)
+   ===================================================== */
+
+:root {
+  --maroon: #72253D;
+  --maroon-dark: #5A0414;
+  --navy: #72253D;
+  --navy-dark: #5A0414;
+  --accent: #ffffff;
+  --gold: #ffffff;
+  --text: #1c1c1c;
+  --text-muted: #444;
+  --bg: #fafafa;
+  --bg-warm: #f7f1f3;
+  --rule: #c0788a;
+  --link: #72253D;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+/* ── HEADER ── */
+header {
+  background: linear-gradient(135deg, #5A0414 0%, #72253D 100%);
+  color: white;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 60px,
+    rgba(255,255,255,0.04) 60px,
+    rgba(255,255,255,0.04) 61px
+  );
+}
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 52px 40px 44px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.header-logo-area { flex-shrink: 0; }
+.header-logo-area svg { display: block; }
+.header-text { flex: 1; }
+.header-text h1 {
+  font-family: 'EB Garamond', serif;
+  font-size: 2.4rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  color: white;
+}
+.header-text h1 a { color: white; text-decoration: none; }
+.header-text .tagline {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 0.06em;
+  font-weight: 300;
+}
+.header-text .fordham-badge {
+  display: inline-block;
+  margin-top: 16px;
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 2px;
+  padding: 4px 12px;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  color: white;
+  text-transform: uppercase;
+}
+
+/* ── NAV ── */
+nav {
+  background: var(--navy-dark);
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
+nav ul {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px 0 200px;
+  list-style: none;
+  display: flex;
+  gap: 0;
+}
+@media (max-width: 720px) { nav ul { padding: 0 20px; } }
+nav ul li a {
+  display: block;
+  padding: 13px 20px;
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+  border-bottom: 2px solid transparent;
+}
+nav ul li a:hover { color: white; border-bottom-color: white; }
+nav ul li a.active { color: white; border-bottom-color: white; }
+
+/* ── LAYOUT ── */
+.page-wrap { max-width: 1100px; margin: 0 auto; padding: 60px 40px; }
+
+section { margin-bottom: 64px; }
+section:last-child { margin-bottom: 0; }
+
+.section-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--maroon);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+h2 {
+  font-family: 'EB Garamond', serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--maroon);
+  line-height: 1.25;
+  margin-bottom: 6px;
+}
+.section-rule {
+  width: 52px;
+  height: 2px;
+  background: var(--maroon);
+  margin-bottom: 24px;
+}
+p { margin-bottom: 16px; color: var(--text-muted); font-size: 1.02rem; }
+p:last-child { margin-bottom: 0; }
+
+/* ── HERO STRIP (used on multiple pages) ── */
+.hero-strip {
+  background: linear-gradient(135deg, #72253D 0%, #5A0414 100%);
+  color: white;
+  padding: 52px 40px;
+  margin-bottom: 64px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-strip.with-quote::after {
+  content: '"';
+  position: absolute;
+  right: 60px;
+  top: -10px;
+  font-family: 'EB Garamond', serif;
+  font-size: 18rem;
+  color: rgba(255,255,255,0.07);
+  line-height: 1;
+  pointer-events: none;
+}
+.hero-strip-inner { max-width: 1020px; margin: 0 auto; }
+.hero-strip blockquote {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.55rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: #ffffff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  margin-bottom: 16px;
+  max-width: 760px;
+}
+.hero-strip cite {
+  font-size: 0.85rem;
+  color: #ffffff;
+  letter-spacing: 0.08em;
+  font-style: normal;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+}
+.hero-strip .eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 12px;
+}
+.hero-strip h1 {
+  font-family: 'EB Garamond', serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 14px;
+  color: white;
+}
+.hero-strip p {
+  color: rgba(255,255,255,0.88);
+  font-size: 1.02rem;
+  max-width: 780px;
+  margin-bottom: 0;
+}
+
+/* ── TWO COLUMN ── */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+@media (max-width: 720px) { .two-col { grid-template-columns: 1fr; } }
+
+/* ── CARD GRID (mission cards) ── */
+.card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+@media (max-width: 860px) { .card-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 540px) { .card-grid { grid-template-columns: 1fr; } }
+
+.card {
+  background: white;
+  border: 1px solid #e8e0d0;
+  border-top: 3px solid var(--maroon);
+  padding: 24px 22px;
+  border-radius: 2px;
+}
+.card h3 {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.15rem;
+  color: var(--maroon);
+  margin-bottom: 8px;
+}
+.card p { font-size: 0.93rem; color: var(--text-muted); margin: 0; }
+.card .icon {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  display: block;
+}
+
+/* ── FOCUS AREAS ── */
+.focus-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+.focus-tag {
+  background: var(--maroon);
+  color: white;
+  padding: 7px 16px;
+  border-radius: 2px;
+  font-size: 0.84rem;
+  letter-spacing: 0.04em;
+  border-left: 3px solid var(--gold);
+}
+
+/* ── FACULTY CARD (used on People page for Dr. Chen) ── */
+.faculty-card {
+  display: flex;
+  gap: 28px;
+  background: white;
+  border: 1px solid #e8e0d0;
+  padding: 28px 28px;
+  border-radius: 2px;
+  align-items: flex-start;
+}
+.faculty-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 2px solid var(--maroon);
+  flex-shrink: 0;
+}
+.faculty-info h3 {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.35rem;
+  color: var(--maroon);
+  margin-bottom: 2px;
+}
+.faculty-info .title {
+  font-size: 0.87rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+}
+.faculty-info p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 10px; }
+.faculty-info a { color: var(--maroon); font-size: 0.9rem; }
+
+/* ── PROGRAM STEPS ── */
+.steps { counter-reset: step; display: flex; flex-direction: column; gap: 0; }
+.step {
+  display: flex;
+  gap: 20px;
+  padding: 24px 0;
+  border-bottom: 1px solid #e8e0d0;
+}
+.step:last-child { border-bottom: none; }
+.step-num {
+  counter-increment: step;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  background: var(--maroon);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'EB Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  border-radius: 50%;
+}
+.step-body h3 {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.15rem;
+  color: var(--maroon);
+  margin-bottom: 6px;
+}
+.step-body p { font-size: 0.95rem; color: var(--text-muted); margin: 0; }
+
+/* ── FELLOWSHIP BANNER ── */
+.fellowship-banner {
+  background: linear-gradient(135deg, #72253D 0%, #5A0414 100%);
+  border-left: 5px solid var(--gold);
+  padding: 40px 40px;
+  color: white;
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+.fellowship-banner::before {
+  content: '2026';
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'EB Garamond', serif;
+  font-size: 7rem;
+  color: rgba(255,255,255,0.1);
+  font-weight: 600;
+  pointer-events: none;
+  line-height: 1;
+}
+.fellowship-banner .eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 10px;
+}
+.fellowship-banner h2 {
+  color: white;
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+}
+.fellowship-banner p { color: rgba(255,255,255,0.80); margin-bottom: 12px; font-size: 1rem; }
+.fellowship-banner ul {
+  padding-left: 20px;
+  color: rgba(255,255,255,0.80);
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  line-height: 1.9;
+}
+.fellowship-banner .detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 20px 0 24px;
+}
+.fellowship-banner .detail-item {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 14px 16px;
+  border-radius: 2px;
+}
+.fellowship-banner .detail-item .label {
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 4px;
+}
+.fellowship-banner .detail-item .value {
+  color: white;
+  font-size: 0.95rem;
+}
+.fellowship-banner .status-callout {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.4);
+  border-left: 4px solid white;
+  padding: 14px 18px;
+  margin: 20px 0;
+  border-radius: 2px;
+}
+.fellowship-banner .status-callout .label {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+}
+.fellowship-banner .status-callout .headline {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: white;
+}
+.fellowship-banner .status-callout .note {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.8);
+}
+
+/* ── BUTTONS ── */
+.btn {
+  display: inline-block;
+  background: white;
+  color: #5A0414;
+  padding: 12px 28px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+}
+.btn:hover { background: #f0e0e4; color: #5A0414; }
+.btn-outline {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.8);
+  color: white;
+  margin-left: 12px;
+}
+.btn-outline:hover { background: rgba(255,255,255,0.15); }
+.btn-disabled {
+  background: rgba(255,255,255,0.18);
+  color: rgba(255,255,255,0.7);
+  cursor: not-allowed;
+  border: 1px solid rgba(255,255,255,0.25);
+}
+.btn-disabled:hover { background: rgba(255,255,255,0.18); color: rgba(255,255,255,0.7); }
+
+/* Maroon button variant for light backgrounds (home page CTAs) */
+.btn-maroon {
+  background: var(--maroon);
+  color: white;
+}
+.btn-maroon:hover { background: var(--maroon-dark); color: white; }
+
+/* ── HOME PAGE QUICK LINKS ── */
+.quick-links {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 24px;
+}
+@media (max-width: 860px) { .quick-links { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .quick-links { grid-template-columns: 1fr; } }
+.quick-link {
+  background: white;
+  border: 1px solid #e8e0d0;
+  border-top: 3px solid var(--maroon);
+  padding: 24px 22px;
+  border-radius: 2px;
+  text-decoration: none;
+  color: var(--text);
+  transition: transform 0.15s, box-shadow 0.15s;
+  display: block;
+}
+.quick-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(114,37,61,0.08);
+}
+.quick-link h3 {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.2rem;
+  color: var(--maroon);
+  margin-bottom: 6px;
+}
+.quick-link p { font-size: 0.9rem; color: var(--text-muted); margin: 0; }
+.quick-link .arrow {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: var(--maroon);
+  font-weight: 600;
+}
+
+/* ── PARTNERS / CCEL ── */
+.partner-box {
+  background: #f7f1f3;
+  border: 1px solid #e0d8c8;
+  padding: 28px 28px;
+  border-radius: 2px;
+}
+.partner-box h3 {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.15rem;
+  color: var(--maroon);
+  margin-bottom: 8px;
+}
+.partner-box p { font-size: 0.94rem; }
+
+/* ── PEOPLE: FELLOWS GRID ── */
+.fellows-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+@media (max-width: 900px) { .fellows-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .fellows-grid { grid-template-columns: 1fr; } }
+
+/* ── PEOPLE: MENTORS GRID (2-up, centered, narrower) ── */
+.mentors-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  max-width: 740px;
+  margin: 0 auto;
+}
+@media (max-width: 560px) { .mentors-grid { grid-template-columns: 1fr; } }
+
+.subsection-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.subsection-header .section-rule {
+  margin-left: auto;
+  margin-right: auto;
+}
+.subsection-header p {
+  max-width: 680px;
+  margin: 12px auto 0;
+}
+
+.fellow-card {
+  background: white;
+  border: 1px solid #e8e0d0;
+  border-top: 3px solid var(--maroon);
+  padding: 28px 24px 22px;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.fellow-photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 3px solid var(--maroon);
+  background: var(--bg-warm);
+  margin-bottom: 18px;
+}
+.fellow-photo.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--maroon);
+  font-family: 'EB Garamond', serif;
+  font-size: 2.6rem;
+  background: linear-gradient(135deg, #f7f1f3, #ede2e6);
+}
+.fellow-name {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--maroon);
+  line-height: 1.25;
+  margin-bottom: 4px;
+}
+.fellow-affiliation {
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+.fellow-bio {
+  font-size: 0.94rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  text-align: left;
+  margin-bottom: 18px;
+  flex-grow: 1;
+}
+.fellow-links {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  padding-top: 14px;
+  border-top: 1px solid #f0e6d8;
+  width: 100%;
+}
+.fellow-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--maroon);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.fellow-links a:hover { color: var(--maroon-dark); }
+.fellow-links svg { width: 16px; height: 16px; }
+.fellow-placeholder-text {
+  color: #999;
+  font-style: italic;
+  font-size: 0.9rem;
+  margin-bottom: 18px;
+  flex-grow: 1;
+}
+
+/* ── CONTACT BLOCK ── */
+.contact-block {
+  background: white;
+  border: 1px solid #e8e0d0;
+  border-left: 4px solid var(--maroon);
+  padding: 28px 32px;
+  border-radius: 2px;
+  margin-bottom: 24px;
+}
+.contact-block h3 {
+  font-family: 'EB Garamond', serif;
+  color: var(--maroon);
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+.contact-block p { font-size: 0.98rem; }
+.contact-block a { color: var(--maroon); font-weight: 600; text-decoration: none; }
+.contact-block a:hover { text-decoration: underline; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--navy-dark);
+  color: rgba(255,255,255,0.65);
+  padding: 36px 40px;
+  font-size: 0.85rem;
+}
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+footer a { color: white; text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+.footer-brand {
+  color: white;
+  font-family: 'EB Garamond', serif;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}

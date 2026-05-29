@@ -1,0 +1,15 @@
+# OS
+.DS_Store
+
+# Private/draft documents that should NOT be published.
+# The photos/ folder is also used as a scratch area locally for
+# working documents; only the actual photos used by the site
+# should be tracked.
+photos/*.pdf
+photos/*.docx
+photos/*.doc
+
+# Generic temp/draft files anywhere
+*.tmp
+*.swp
+*~
