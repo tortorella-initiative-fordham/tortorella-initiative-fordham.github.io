@@ -50,15 +50,16 @@ header::before {
 .header-inner {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 52px 40px 44px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 40px;
+  padding: 40px 40px 32px 160px;
 }
-.header-logo-area { flex-shrink: 0; }
+.header-logo-area {
+  position: absolute;
+  left: max(20px, calc((100vw - 1100px) / 2 - 40px));
+  top: 50%;
+  transform: translateY(-50%);
+}
 .header-logo-area svg { display: block; }
-.header-text { flex: 1; }
+.header-text { /* normal block flow inside header-inner */ }
 .header-text h1 {
   font-family: 'EB Garamond', serif;
   font-size: 2.4rem;
@@ -95,12 +96,11 @@ nav {
 nav ul {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 40px 0 200px;
+  padding: 0 40px 0 140px;
   list-style: none;
   display: flex;
   gap: 0;
 }
-@media (max-width: 720px) { nav ul { padding: 0 20px; } }
 nav ul li a {
   display: block;
   padding: 13px 20px;
@@ -116,7 +116,7 @@ nav ul li a:hover { color: white; border-bottom-color: white; }
 nav ul li a.active { color: white; border-bottom-color: white; }
 
 /* ── LAYOUT ── */
-.page-wrap { max-width: 1100px; margin: 0 auto; padding: 60px 40px; }
+.page-wrap { max-width: 1100px; margin: 0 auto; padding: 60px 40px 60px 160px; }
 
 section { margin-bottom: 64px; }
 section:last-child { margin-bottom: 0; }
@@ -166,7 +166,7 @@ p:last-child { margin-bottom: 0; }
   line-height: 1;
   pointer-events: none;
 }
-.hero-strip-inner { max-width: 1020px; margin: 0 auto; }
+.hero-strip-inner { max-width: 1020px; margin: 0 auto; padding-left: 120px; }
 .hero-strip blockquote {
   font-family: 'EB Garamond', serif;
   font-size: 1.55rem;
@@ -642,6 +642,7 @@ footer {
 .footer-inner {
   max-width: 1100px;
   margin: 0 auto;
+  padding-left: 100px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
